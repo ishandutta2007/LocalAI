@@ -325,7 +325,7 @@
   files:
     - filename: gemma-2-27b-it-Q4_K_M.gguf
       uri: huggingface://bartowski/gemma-2-27b-it-GGUF/gemma-2-27b-it-Q4_K_M.gguf
-      sha256: be6739763f1b7661d32bd63e05bc1131e5bb9dac436b249faf6c6edffa601c96
+      sha256: ca86fbdb791842cf2e5eb276a6916e326b3b5d58d9ab60ee3e18b1c6f01fc181
 - !!merge <<: *gemma
   name: "gemma-2-9b-it"
   urls:
@@ -339,7 +339,7 @@
   files:
     - filename: gemma-2-9b-it-Q4_K_M.gguf
       uri: huggingface://bartowski/gemma-2-9b-it-GGUF/gemma-2-9b-it-Q4_K_M.gguf
-      sha256: 5375972196fae34c1a767bbeba93938d86abb39f2f91ea5453efa36ead6569f1
+      sha256: c70fd20caec79fb953b83031c46ddea4e99905835a66af7b8a856aa1b2534614
 - &llama3
   url: "github:mudler/LocalAI/gallery/llama3-instruct.yaml@master"
   icon: https://cdn-uploads.huggingface.co/production/uploads/642cc1c253e76b4c2286c58e/aJJxKus1wP5N-euvHEUq7.png
@@ -1286,6 +1286,65 @@
     - filename: New-Dawn-Llama-3-70B-32K-v1.0-Q4_K_M.gguf
       sha256: 30561ae5decac4ad46775c76a9a40fb43436ade96bc132b4b9cc6749b9e2f448
       uri: huggingface://bartowski/New-Dawn-Llama-3-70B-32K-v1.0-GGUF/New-Dawn-Llama-3-70B-32K-v1.0-Q4_K_M.gguf
+- !!merge <<: *llama3
+  name: "l3-aethora-15b-v2"
+  urls:
+    - https://huggingface.co/bartowski/L3-Aethora-15B-V2-GGUF
+    - https://huggingface.co/ZeusLabs/L3-Aethora-15B-V2
+  icon: https://cdn-uploads.huggingface.co/production/uploads/64545af5ec40bbbd01242ca6/yJpwVd5UTnAVDoEPVVCS1.png
+  description: |
+    L3-Aethora-15B v2 is an advanced language model built upon the Llama 3 architecture. It employs state-of-the-art training techniques and a curated dataset to deliver enhanced performance across a wide range of tasks.
+  overrides:
+    parameters:
+      model: L3-Aethora-15B-V2-Q4_K_M.gguf
+  files:
+    - filename: L3-Aethora-15B-V2-Q4_K_M.gguf
+      sha256: 014a215739e1574e354780f218776e54807548d0c32555274c4d96d7628f29b6
+      uri: huggingface://bartowski/L3-Aethora-15B-V2-GGUF/L3-Aethora-15B-V2-Q4_K_M.gguf
+- !!merge <<: *llama3
+  name: "bungo-l3-8b-iq-imatrix"
+  urls:
+    - https://huggingface.co/Lewdiculous/Bungo-L3-8B-GGUF-IQ-Imatrix-Request
+  icon: https://cdn-uploads.huggingface.co/production/uploads/65d4cf2693a0a3744a27536c/ezaxE50ef-7RsFi3gUbNp.webp
+  description: |
+    An experimental model that turned really well. Scores high on Chai leaderboard (slerp8bv2 there). Feel smarter than average L3 merges for RP.
+  overrides:
+    parameters:
+      model: Bungo-L3-8B-Q4_K_M-imat.gguf
+  files:
+    - filename: Bungo-L3-8B-Q4_K_M-imat.gguf
+      sha256: 88d0139954e8f9525b80636a6269df885008c4837a1332f84f9a5dc6f37c9b8f
+      uri: huggingface://Lewdiculous/Bungo-L3-8B-GGUF-IQ-Imatrix-Request/Bungo-L3-8B-Q4_K_M-imat.gguf
+- !!merge <<: *llama3
+  name: "llama3-8b-darkidol-2.1-uncensored-1048k-iq-imatrix"
+  urls:
+    - https://huggingface.co/LWDCLS/llama3-8B-DarkIdol-2.1-Uncensored-1048K-GGUF-IQ-Imatrix-Request
+  icon: https://cdn-uploads.huggingface.co/production/uploads/65d4cf2693a0a3744a27536c/tKL5W1G5WCHm4609LEmiM.png
+  description: |
+    The module combination has been readjusted to better fulfill various roles and has been adapted for mobile phones.
+    Uncensored 1048K
+  overrides:
+    parameters:
+      model: llama3-8B-DarkIdol-2.1-Uncensored-1048K-Q4_K_M-imat.gguf
+  files:
+    - filename: llama3-8B-DarkIdol-2.1-Uncensored-1048K-Q4_K_M-imat.gguf
+      sha256: 86f0f1e10fc315689e09314aebb7354bb40d8fe95de008d21a75dc8fff1cd2fe
+      uri: huggingface://LWDCLS/llama3-8B-DarkIdol-2.1-Uncensored-1048K-GGUF-IQ-Imatrix-Request/llama3-8B-DarkIdol-2.1-Uncensored-1048K-Q4_K_M-imat.gguf
+- !!merge <<: *llama3
+  name: "llama3-turbcat-instruct-8b"
+  urls:
+    - https://huggingface.co/turboderp/llama3-turbcat-instruct-8b
+    - https://huggingface.co/bartowski/llama3-turbcat-instruct-8b-GGUF
+  icon: https://huggingface.co/turboderp/llama3-turbcat-instruct-8b/resolve/main/8.png
+  description: |
+    This is a direct upgrade over cat 70B, with 2x the dataset size(2GB-> 5GB), added Chinese support with quality on par with the original English dataset. The medical COT portion of the dataset has been sponsored by steelskull, and the action packed character play portion was donated by Gryphe's(aesir dataset). Note that 8b is based on llama3 with limited Chinese support due to base model choice. The chat format in 8b is llama3. The 72b has more comprehensive Chinese support and the format will be chatml.
+  overrides:
+    parameters:
+      model: llama3-turbcat-instruct-8b-Q4_K_M.gguf
+  files:
+    - filename: llama3-turbcat-instruct-8b-Q4_K_M.gguf
+      sha256: a9a36e3220d901a8ad80c75608a81aaeed3a9cdf111247462bf5e3443aad5461
+      uri: huggingface://bartowski/llama3-turbcat-instruct-8b-GGUF/llama3-turbcat-instruct-8b-Q4_K_M.gguf
 - &dolphin
   name: "dolphin-2.9-llama3-8b"
   url: "github:mudler/LocalAI/gallery/hermes-2-pro-mistral.yaml@master"
@@ -2645,6 +2704,69 @@
     - filename: "Codestral-22B-v0.1-Q4_K_M.gguf"
       uri: "huggingface://bartowski/Codestral-22B-v0.1-GGUF/Codestral-22B-v0.1-Q4_K_M.gguf"
       sha256: 003e48ed892850b80994fcddca2bd6b833b092a4ef2db2853c33a3144245e06c
+- &llm-compiler
+  url: "github:mudler/LocalAI/gallery/codellama.yaml@master"
+  name: "llm-compiler-13b-imat"
+  license: other
+  description: |
+    LLM Compiler is a state-of-the-art LLM that builds upon Code Llama with improved performance for code optimization and compiler reasoning.
+    LLM Compiler is free for both research and commercial use.
+    LLM Compiler is available in two flavors:
+
+        LLM Compiler, the foundational models, pretrained on over 500B tokens of LLVM-IR, x86_84, ARM, and CUDA assembly codes and trained to predict the effect of LLVM optimizations;
+        and LLM Compiler FTD, which is further fine-tuned to predict the best optimizations for code in LLVM assembly to reduce code size, and to disassemble assembly code to LLVM-IR.
+  urls:
+    - https://huggingface.co/legraphista/llm-compiler-13b-IMat-GGUF
+    - https://huggingface.co/facebook/llm-compiler-13b
+  tags:
+    - llm
+    - gguf
+    - gpu
+    - code
+    - cpu
+  overrides:
+    parameters:
+      model: llm-compiler-13b.Q4_K.gguf
+  files:
+    - filename: "llm-compiler-13b.Q4_K.gguf"
+      uri: "huggingface://legraphista/llm-compiler-13b-IMat-GGUF/llm-compiler-13b.Q4_K.gguf"
+      sha256: dad41a121d0d67432c289aba8ffffc93159e2b24ca3d1c62e118c9f4cbf0c890
+- !!merge <<: *llm-compiler
+  name: "llm-compiler-13b-ftd"
+  urls:
+    - https://huggingface.co/QuantFactory/llm-compiler-13b-ftd-GGUF
+    - https://huggingface.co/facebook/llm-compiler-13b-ftd
+  overrides:
+    parameters:
+      model: llm-compiler-13b-ftd.Q4_K_M.gguf
+  files:
+    - filename: "llm-compiler-13b-ftd.Q4_K_M.gguf"
+      uri: "huggingface://QuantFactory/llm-compiler-13b-ftd-GGUF/llm-compiler-13b-ftd.Q4_K_M.gguf"
+      sha256: a5d19ae6b3fbe6724784363161b66cd2c8d8a3905761c0fb08245b3c03697db1
+- !!merge <<: *llm-compiler
+  name: "llm-compiler-7b-imat-GGUF"
+  urls:
+    - https://huggingface.co/legraphista/llm-compiler-7b-IMat-GGUF
+    - https://huggingface.co/facebook/llm-compiler-7b
+  overrides:
+    parameters:
+      model: llm-compiler-7b.Q4_K.gguf
+  files:
+    - filename: "llm-compiler-7b.Q4_K.gguf"
+      uri: "huggingface://legraphista/llm-compiler-7b-IMat-GGUF/llm-compiler-7b.Q4_K.gguf"
+      sha256: 84926979701fa4591ff5ede94a6c5829a62efa620590e5815af984707d446926
+- !!merge <<: *llm-compiler
+  name: "llm-compiler-7b-ftd-imat"
+  urls:
+    - https://huggingface.co/legraphista/llm-compiler-7b-ftd-IMat-GGUF
+    - https://huggingface.co/facebook/llm-compiler-7b-ftd
+  overrides:
+    parameters:
+      model: llm-compiler-7b-ftd.Q4_K.gguf
+  files:
+    - filename: "llm-compiler-7b-ftd.Q4_K.gguf"
+      uri: "huggingface://legraphista/llm-compiler-7b-ftd-IMat-GGUF/llm-compiler-7b-ftd.Q4_K.gguf"
+      sha256: d862dd18ed335413787d0ad196522a9902a3c10a6456afdab8721822cb0ddde8
 - &openvino
   ### START OpenVINO
   url: "github:mudler/LocalAI/gallery/openvino.yaml@master"
