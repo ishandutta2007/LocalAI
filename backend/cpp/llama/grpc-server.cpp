@@ -495,6 +495,16 @@ struct llama_server_context
         }
     }
 
+    llama_client_slot* get_active_slot() {
+        for (llama_client_slot& slot : slots) {
+            // Check if the slot is currently processing
+            if (slot.is_processing()) {
+                return &slot;  // Return the active slot
+            }
+        }
+        return nullptr;  // No active slot found
+    }
+
     void initialize() {
         // create slots
         all_slots_are_idle = true;
@@ -2106,6 +2116,9 @@ json parse_options(bool streaming, const backend::PredictOptions* predict, llama
     data["ignore_eos"] = predict->ignoreeos();
     data["embeddings"] = predict->embeddings();
 
+    // Add the correlationid to json data
+    data["correlation_id"] = predict->correlationid();
+
     // for each image in the request, add the image data
     //
     for (int i = 0; i < predict->images_size(); i++) {
@@ -2344,6 +2357,11 @@ public:
                 int32_t tokens_evaluated = result.result_json.value("tokens_evaluated", 0);
                 reply.set_prompt_tokens(tokens_evaluated);
 
+                // Log Request Correlation Id
+                LOG_VERBOSE("correlation:", {
+                    { "id", data["correlation_id"] }
+                });
+
                 // Send the reply
                 writer->Write(reply);
 
@@ -2367,6 +2385,12 @@ public:
         std::string completion_text;
         task_result result = llama.queue_results.recv(task_id);
         if (!result.error && result.stop) {
+            
+            // Log Request Correlation Id
+            LOG_VERBOSE("correlation:", {
+                { "id", data["correlation_id"] }
+            });
+
             completion_text = result.result_json.value("content", "");
             int32_t tokens_predicted = result.result_json.value("tokens_predicted", 0);
             int32_t tokens_evaluated = result.result_json.value("tokens_evaluated", 0);
@@ -2406,6 +2430,31 @@ public:
 
         return grpc::Status::OK;
     }
+
+    grpc::Status GetMetrics(ServerContext* context, const backend::MetricsRequest* request, backend::MetricsResponse* response) {
+        llama_client_slot* active_slot = llama.get_active_slot();
+
+        if (active_slot != nullptr) {
+            // Calculate the tokens per second using existing logic
+            double tokens_per_second = 1e3 / active_slot->t_token_generation * active_slot->n_decoded;
+
+            // Populate the response with metrics
+            response->set_slot_id(active_slot->id);
+            response->set_prompt_json_for_slot(active_slot->prompt.dump());
+            response->set_tokens_per_second(tokens_per_second);
+            response->set_tokens_generated(active_slot->n_decoded);
+            response->set_prompt_tokens_processed(active_slot->num_prompt_tokens_processed);
+        } else {
+            // Handle case when no active slot exists
+            response->set_slot_id(0);
+            response->set_prompt_json_for_slot("");
+            response->set_tokens_per_second(0);
+            response->set_tokens_generated(0);
+            response->set_prompt_tokens_processed(0);
+        }
+
+        return grpc::Status::OK;
+    } 
 };
 
 void RunServer(const std::string& server_address) {

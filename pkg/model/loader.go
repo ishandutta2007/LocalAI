@@ -13,7 +13,6 @@ import (
 
 	"github.com/mudler/LocalAI/pkg/utils"
 
-	process "github.com/mudler/go-processmanager"
 	"github.com/rs/zerolog/log"
 )
 
@@ -21,20 +20,18 @@ import (
 
 // TODO: Split ModelLoader and TemplateLoader? Just to keep things more organized. Left together to share a mutex until I look into that. Would split if we seperate directories for .bin/.yaml and .tmpl
 type ModelLoader struct {
-	ModelPath     string
-	mu            sync.Mutex
-	models        map[string]*Model
-	grpcProcesses map[string]*process.Process
-	templates     *templates.TemplateCache
-	wd            *WatchDog
+	ModelPath string
+	mu        sync.Mutex
+	models    map[string]*Model
+	templates *templates.TemplateCache
+	wd        *WatchDog
 }
 
 func NewModelLoader(modelPath string) *ModelLoader {
 	nml := &ModelLoader{
-		ModelPath:     modelPath,
-		models:        make(map[string]*Model),
-		templates:     templates.NewTemplateCache(modelPath),
-		grpcProcesses: make(map[string]*process.Process),
+		ModelPath: modelPath,
+		models:    make(map[string]*Model),
+		templates: templates.NewTemplateCache(modelPath),
 	}
 
 	return nml
@@ -105,21 +102,21 @@ FILE:
 	return models, nil
 }
 
-func (ml *ModelLoader) ListModels() []*Model {
+func (ml *ModelLoader) ListModels() []Model {
 	ml.mu.Lock()
 	defer ml.mu.Unlock()
 
-	models := []*Model{}
+	models := []Model{}
 	for _, model := range ml.models {
-		models = append(models, model)
+		models = append(models, *model)
 	}
 
 	return models
 }
 
-func (ml *ModelLoader) LoadModel(modelName string, loader func(string, string) (*Model, error)) (*Model, error) {
+func (ml *ModelLoader) LoadModel(modelID, modelName string, loader func(string, string, string) (*Model, error)) (*Model, error) {
 	// Check if we already have a loaded model
-	if model := ml.CheckIsLoaded(modelName); model != nil {
+	if model := ml.CheckIsLoaded(modelID); model != nil {
 		return model, nil
 	}
 
@@ -127,18 +124,18 @@ func (ml *ModelLoader) LoadModel(modelName string, loader func(string, string) (
 	modelFile := filepath.Join(ml.ModelPath, modelName)
 	log.Debug().Msgf("Loading model in memory from file: %s", modelFile)
 
-	model, err := loader(modelName, modelFile)
+	ml.mu.Lock()
+	defer ml.mu.Unlock()
+	model, err := loader(modelID, modelName, modelFile)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to load model with internal loader: %s", err)
 	}
 
 	if model == nil {
 		return nil, fmt.Errorf("loader didn't return a model")
 	}
 
-	ml.mu.Lock()
-	defer ml.mu.Unlock()
-	ml.models[modelName] = model
+	ml.models[modelID] = model
 
 	return model, nil
 }
@@ -146,14 +143,13 @@ func (ml *ModelLoader) LoadModel(modelName string, loader func(string, string) (
 func (ml *ModelLoader) ShutdownModel(modelName string) error {
 	ml.mu.Lock()
 	defer ml.mu.Unlock()
-
-	_, ok := ml.models[modelName]
+	model, ok := ml.models[modelName]
 	if !ok {
 		return fmt.Errorf("model %s not found", modelName)
 	}
 
 	retries := 1
-	for ml.models[modelName].GRPC(false, ml.wd).IsBusy() {
+	for model.GRPC(false, ml.wd).IsBusy() {
 		log.Debug().Msgf("%s busy. Waiting.", modelName)
 		dur := time.Duration(retries*2) * time.Second
 		if dur > retryTimeout {
@@ -161,6 +157,11 @@ func (ml *ModelLoader) ShutdownModel(modelName string) error {
 		}
 		time.Sleep(dur)
 		retries++
+
+		if retries > 10 && os.Getenv("LOCALAI_FORCE_BACKEND_SHUTDOWN") == "true" {
+			log.Warn().Msgf("Model %s is still busy after %d retries. Forcing shutdown.", modelName, retries)
+			break
+		}
 	}
 
 	return ml.deleteProcess(modelName)
@@ -185,8 +186,8 @@ func (ml *ModelLoader) CheckIsLoaded(s string) *Model {
 	if !alive {
 		log.Warn().Msgf("GRPC Model not responding: %s", err.Error())
 		log.Warn().Msgf("Deleting the process in order to recreate it")
-		process, exists := ml.grpcProcesses[s]
-		if !exists {
+		process := m.Process()
+		if process == nil {
 			log.Error().Msgf("Process not found for '%s' and the model is not responding anymore !", s)
 			return m
 		}
