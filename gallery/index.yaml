@@ -611,6 +611,21 @@
     - filename: TheSkullery_L3.3-exp-unnamed-model-70b-v0.5-Q4_K_M.gguf
       sha256: b8f7a0bcbccf79507ee28c8f6ca4e88625d9aa17f92deb12635775fb2eb42a2a
       uri: huggingface://bartowski/TheSkullery_L3.3-exp-unnamed-model-70b-v0.5-GGUF/TheSkullery_L3.3-exp-unnamed-model-70b-v0.5-Q4_K_M.gguf
+- !!merge <<: *llama33
+  name: "sentientagi_dobby-unhinged-llama-3.3-70b"
+  icon: https://huggingface.co/SentientAGI/Dobby-Unhinged-Llama-3.3-70B/resolve/main/assets/Dobby-70B.png
+  urls:
+    - https://huggingface.co/SentientAGI/Dobby-Unhinged-Llama-3.3-70B
+    - https://huggingface.co/bartowski/SentientAGI_Dobby-Unhinged-Llama-3.3-70B-GGUF
+  description: |
+    Dobby-Unhinged-Llama-3.3-70B is a language model fine-tuned from Llama-3.3-70B-Instruct. Dobby models have a strong conviction towards personal freedom, decentralization, and all things crypto — even when coerced to speak otherwise. Dobby-Unhinged-Llama-3.3-70B, Dobby-Mini-Leashed-Llama-3.1-8B and Dobby-Mini-Unhinged-Llama-3.1-8B have their own unique personalities, and this 70B model is being released in response to the community feedback that was collected from our previous 8B releases.
+  overrides:
+    parameters:
+      model: SentientAGI_Dobby-Unhinged-Llama-3.3-70B-Q4_K_M.gguf
+  files:
+    - filename: SentientAGI_Dobby-Unhinged-Llama-3.3-70B-Q4_K_M.gguf
+      sha256: b768e3828f8a72b7374bcf71600af8621563f1b002459b4dcd002ab144f68aa6
+      uri: huggingface://bartowski/SentientAGI_Dobby-Unhinged-Llama-3.3-70B-GGUF/SentientAGI_Dobby-Unhinged-Llama-3.3-70B-Q4_K_M.gguf
 - &rwkv
   url: "github:mudler/LocalAI/gallery/rwkv.yaml@master"
   name: "rwkv-6-world-7b"
@@ -1550,6 +1565,23 @@
     - filename: localai-functioncall-llama3.2-3b-v0.5-q4_k_m.gguf
       sha256: edc50f6c243e6bd6912599661a15e030de03d2be53409663ac27d3ca48306ee4
       uri: huggingface://mudler/LocalAI-functioncall-llama3.2-3b-v0.5-Q4_K_M-GGUF/localai-functioncall-llama3.2-3b-v0.5-q4_k_m.gguf
+- !!merge <<: *llama32
+  name: "kubeguru-llama3.2-3b-v0.1"
+  icon: https://cdn-uploads.huggingface.co/production/uploads/647374aa7ff32a81ac6d35d4/rptpRyhrcUEG3i2OPT897.png
+  urls:
+    - https://huggingface.co/Spectro-Cloud/kubeguru-llama3.2-3b-v0.1
+    - https://huggingface.co/mradermacher/kubeguru-llama3.2-3b-v0.1-GGUF
+  description: |
+    Kubeguru: Your Kubernetes & Linux Expert AI
+    Ask anything about Kubernetes, Linux, containers—and get expert answers in real-time!
+    Kubeguru is a specialized Large Language Model (LLM) developed and released by the Open Source team at Spectro Cloud. Whether you're managing cloud-native applications, deploying edge workloads, or troubleshooting containerized services, Kubeguru provides precise, actionable insights at every step.
+  overrides:
+    parameters:
+      model: kubeguru-llama3.2-3b-v0.1.Q4_K_M.gguf
+  files:
+    - filename: kubeguru-llama3.2-3b-v0.1.Q4_K_M.gguf
+      sha256: 770900ba9594f64f31b35fe444d31263712cabe167efaf4201d79fdc29de9533
+      uri: huggingface://mradermacher/kubeguru-llama3.2-3b-v0.1-GGUF/kubeguru-llama3.2-3b-v0.1.Q4_K_M.gguf
 - &qwen25
   name: "qwen2.5-14b-instruct" ## Qwen2.5
   icon: https://avatars.githubusercontent.com/u/141221163
@@ -3830,6 +3862,103 @@
     - filename: ozone-ai_0x-lite-Q4_K_M.gguf
       sha256: 7f163e72ead7522bd6774555a932e0a11f212d17cdc9442e2cfd1b017009f832
       uri: huggingface://bartowski/ozone-ai_0x-lite-GGUF/ozone-ai_0x-lite-Q4_K_M.gguf
+- !!merge <<: *qwen25
+  name: "nbeerbower_dumpling-qwen2.5-14b"
+  icon: https://huggingface.co/nbeerbower/Dumpling-Qwen2.5-32B/resolve/main/dumpling_cover.png?download=true
+  urls:
+    - https://huggingface.co/nbeerbower/Dumpling-Qwen2.5-14B
+    - https://huggingface.co/bartowski/nbeerbower_Dumpling-Qwen2.5-14B-GGUF
+  description: |
+    nbeerbower/EVA-abliterated-TIES-Qwen2.5-14B finetuned on:
+
+        nbeerbower/GreatFirewall-DPO
+        nbeerbower/Schule-DPO
+        nbeerbower/Purpura-DPO
+        nbeerbower/Arkhaios-DPO
+        jondurbin/truthy-dpo-v0.1
+        antiven0m/physical-reasoning-dpo
+        flammenai/Date-DPO-NoAsterisks
+        flammenai/Prude-Phi3-DPO
+        Atsunori/HelpSteer2-DPO
+        jondurbin/gutenberg-dpo-v0.1
+        nbeerbower/gutenberg2-dpo
+        nbeerbower/gutenberg-moderne-dpo.
+  overrides:
+    parameters:
+      model: nbeerbower_Dumpling-Qwen2.5-14B-Q4_K_M.gguf
+  files:
+    - filename: nbeerbower_Dumpling-Qwen2.5-14B-Q4_K_M.gguf
+      sha256: 2d38348414b2719971a08a604313ed98b44b586490633d6e237dd096ae5bf31d
+      uri: huggingface://bartowski/nbeerbower_Dumpling-Qwen2.5-14B-GGUF/nbeerbower_Dumpling-Qwen2.5-14B-Q4_K_M.gguf
+- !!merge <<: *qwen25
+  name: "nbeerbower_dumpling-qwen2.5-32b-v2"
+  icon: https://huggingface.co/nbeerbower/Dumpling-Qwen2.5-32B/resolve/main/dumpling_cover.png?download=true
+  urls:
+    - https://huggingface.co/nbeerbower/Dumpling-Qwen2.5-32B-v2
+    - https://huggingface.co/bartowski/nbeerbower_Dumpling-Qwen2.5-32B-v2-GGUF
+  description: |
+    nbeerbower/Rombos-EVAGutenberg-TIES-Qwen2.5-32B finetuned on:
+
+        nbeerbower/GreatFirewall-DPO
+        nbeerbower/Schule-DPO
+        nbeerbower/Purpura-DPO
+        nbeerbower/Arkhaios-DPO
+        jondurbin/truthy-dpo-v0.1
+        antiven0m/physical-reasoning-dpo
+        flammenai/Date-DPO-NoAsterisks
+        flammenai/Prude-Phi3-DPO
+        Atsunori/HelpSteer2-DPO
+        jondurbin/gutenberg-dpo-v0.1
+        nbeerbower/gutenberg2-dpo
+        nbeerbower/gutenberg-moderne-dpo.
+  overrides:
+    parameters:
+      model: nbeerbower_Dumpling-Qwen2.5-32B-v2-Q4_K_M.gguf
+  files:
+    - filename: nbeerbower_Dumpling-Qwen2.5-32B-v2-Q4_K_M.gguf
+      sha256: 02a5320d62e13b31ac6d04ccdaba7b72a524d6cc72a7082b94d8cac0a183ecb4
+      uri: huggingface://bartowski/nbeerbower_Dumpling-Qwen2.5-32B-v2-GGUF/nbeerbower_Dumpling-Qwen2.5-32B-v2-Q4_K_M.gguf
+- !!merge <<: *qwen25
+  name: "nbeerbower_dumpling-qwen2.5-72b"
+  icon: https://huggingface.co/nbeerbower/Dumpling-Qwen2.5-32B/resolve/main/dumpling_cover.png?download=true
+  urls:
+    - https://huggingface.co/nbeerbower/Dumpling-Qwen2.5-72B
+    - https://huggingface.co/bartowski/nbeerbower_Dumpling-Qwen2.5-72B-GGUF
+  description: |
+    nbeerbower/EVA-abliterated-TIES-Qwen2.5-72B finetuned on:
+        nbeerbower/GreatFirewall-DPO
+        nbeerbower/Schule-DPO
+        nbeerbower/Purpura-DPO
+        nbeerbower/Arkhaios-DPO
+        jondurbin/truthy-dpo-v0.1
+        antiven0m/physical-reasoning-dpo
+        flammenai/Date-DPO-NoAsterisks
+        flammenai/Prude-Phi3-DPO
+        Atsunori/HelpSteer2-DPO
+        jondurbin/gutenberg-dpo-v0.1
+        nbeerbower/gutenberg2-dpo
+        nbeerbower/gutenberg-moderne-dpo.
+  overrides:
+    parameters:
+      model: nbeerbower_Dumpling-Qwen2.5-72B-Q4_K_M.gguf
+  files:
+    - filename: nbeerbower_Dumpling-Qwen2.5-72B-Q4_K_M.gguf
+      sha256: 384de5ba5e60255846cd38e2bfad0374b059fb627ba8abb02273186f28684385
+      uri: huggingface://bartowski/nbeerbower_Dumpling-Qwen2.5-72B-GGUF/nbeerbower_Dumpling-Qwen2.5-72B-Q4_K_M.gguf
+- !!merge <<: *qwen25
+  name: "open-r1_openr1-qwen-7b"
+  urls:
+    - https://huggingface.co/open-r1/OpenR1-Qwen-7B
+    - https://huggingface.co/bartowski/open-r1_OpenR1-Qwen-7B-GGUF
+  description: |
+    This is a finetune of Qwen2.5-Math-Instruct on OpenR1-220k-Math (default split). We train the model on the default split of OpenR1-220k-Math for 3 epochs. We use learning rate of 5e-5 and extend the context length from 4k to 32k, by increasing RoPE frequency to 300k. The training follows a linear learning rate schedule with a 10% warmup phase.
+  overrides:
+    parameters:
+      model: open-r1_OpenR1-Qwen-7B-Q4_K_M.gguf
+  files:
+    - filename: open-r1_OpenR1-Qwen-7B-Q4_K_M.gguf
+      sha256: d3bf99666cd19b637948ec9943044b591d3b906d0ee4f3ef1b3eb693ac8f66a6
+      uri: huggingface://bartowski/open-r1_OpenR1-Qwen-7B-GGUF/open-r1_OpenR1-Qwen-7B-Q4_K_M.gguf
 - &llama31
   url: "github:mudler/LocalAI/gallery/llama3.1-instruct.yaml@master" ## LLama3.1
   icon: https://avatars.githubusercontent.com/u/153379578
@@ -5811,6 +5940,23 @@
     - filename: DavidBrowne17_LlamaThink-8B-instruct-Q4_K_M.gguf
       sha256: 6aea4e13f03347e03d6989c736a7ccab82582115eb072cacfeb7f0b645a8bec0
       uri: huggingface://bartowski/DavidBrowne17_LlamaThink-8B-instruct-GGUF/DavidBrowne17_LlamaThink-8B-instruct-Q4_K_M.gguf
+- !!merge <<: *llama31
+  name: "allenai_llama-3.1-tulu-3.1-8b"
+  icon: https://huggingface.co/datasets/allenai/blog-images/resolve/main/tulu3/Tulu3-logo.png
+  urls:
+    - https://huggingface.co/allenai/Llama-3.1-Tulu-3.1-8B
+    - https://huggingface.co/bartowski/allenai_Llama-3.1-Tulu-3.1-8B-GGUF
+  description: |
+    Tülu 3 is a leading instruction following model family, offering a post-training package with fully open-source data, code, and recipes designed to serve as a comprehensive guide for modern techniques. This is one step of a bigger process to training fully open-source models, like our OLMo models. Tülu 3 is designed for state-of-the-art performance on a diversity of tasks in addition to chat, such as MATH, GSM8K, and IFEval.
+
+    Version 3.1 update: The new version of our Tülu model is from an improvement only in the final RL stage of training. We switched from PPO to GRPO (no reward model) and did further hyperparameter tuning to achieve substantial performance improvements across the board over the original Tülu 3 8B model.
+  overrides:
+    parameters:
+      model: allenai_Llama-3.1-Tulu-3.1-8B-Q4_K_M.gguf
+  files:
+    - filename: allenai_Llama-3.1-Tulu-3.1-8B-Q4_K_M.gguf
+      sha256: 5eae0f1a9bcdea7cad9f1d0d5ba7540bb3de3e2d72293c076a23f24db1c2c7da
+      uri: huggingface://bartowski/allenai_Llama-3.1-Tulu-3.1-8B-GGUF/allenai_Llama-3.1-Tulu-3.1-8B-Q4_K_M.gguf
 - &deepseek
   url: "github:mudler/LocalAI/gallery/deepseek.yaml@master" ## Deepseek
   name: "deepseek-coder-v2-lite-instruct"
@@ -7240,6 +7386,23 @@
     - filename: PygmalionAI_Eleusis-12B-Q4_K_M.gguf
       sha256: 899091671ae483fc7c132512221ee6600984c936cd8c261becee696d00080701
       uri: huggingface://bartowski/PygmalionAI_Eleusis-12B-GGUF/PygmalionAI_Eleusis-12B-Q4_K_M.gguf
+- !!merge <<: *mistral03
+  name: "pygmalionai_pygmalion-3-12b"
+  url: "github:mudler/LocalAI/gallery/chatml.yaml@master"
+  urls:
+    - https://huggingface.co/PygmalionAI/Pygmalion-3-12B
+    - https://huggingface.co/bartowski/PygmalionAI_Pygmalion-3-12B-GGUF
+  description: |
+    It's been a long road fraught with delays, technical issues and us banging our heads against the wall, but we're glad to say that we've returned to open-source roleplaying with our newest model, Pygmalion-3. We've taken Mistral's Nemo base model and fed it hundreds of millions of tokens of conversations, creative writing and instructions to create a model dedicated towards roleplaying that we hope fulfills your expectations.
+
+    As part of our open-source roots and promises to those who have been with us since the beginning, we release this model under the permissive Apache 2.0 license, allowing anyone to use and develop upon our work for everybody in the local models community.
+  overrides:
+    parameters:
+      model: PygmalionAI_Pygmalion-3-12B-Q4_K_M.gguf
+  files:
+    - filename: PygmalionAI_Pygmalion-3-12B-Q4_K_M.gguf
+      sha256: ea6504af7af72db98c2e1fe6b0a7cd4389ccafc6c99247a8c606bf503d7eee6b
+      uri: huggingface://bartowski/PygmalionAI_Pygmalion-3-12B-GGUF/PygmalionAI_Pygmalion-3-12B-Q4_K_M.gguf
 - &mudler
   url: "github:mudler/LocalAI/gallery/mudler.yaml@master" ### START mudler's LocalAI specific-models
   name: "LocalAI-llama3-8b-function-call-v0.2"
