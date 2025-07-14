@@ -20,14 +20,14 @@
 </a>
 </p>
 
-<p align="center"\>
-<a href="[https://hub.docker.com/r/localai/localai](https://hub.docker.com/r/localai/localai)" target="\_blank"\>
-<img src="[https://img.shields.io/badge/dockerhub-images-important.svg?logo=Docker](https://img.shields.io/badge/dockerhub-images-important.svg?logo=Docker)" alt="LocalAI Docker hub"/\>
-</a\>
-<a href="[https://quay.io/repository/go-skynet/local-ai?tab=tags\&tag=latest](https://quay.io/repository/go-skynet/local-ai?tab=tags&tag=latest)" target="\_blank"\>
-<img src="[https://img.shields.io/badge/quay.io-images-important.svg](https://img.shields.io/badge/quay.io-images-important.svg)?" alt="LocalAI Quay.io"/\>
-</a\>
-</p\>
+<p align="center">
+<a href="[https://hub.docker.com/r/localai/localai](https://hub.docker.com/r/localai/localai)" target="\_blank">
+<img src="[https://img.shields.io/badge/dockerhub-images-important.svg?logo=Docker](https://img.shields.io/badge/dockerhub-images-important.svg?logo=Docker)" alt="LocalAI Docker hub"/>
+</a>
+<a href="[https://quay.io/repository/go-skynet/local-ai?tab=tags\&tag=latest](https://quay.io/repository/go-skynet/local-ai?tab=tags&tag=latest)" target="\_blank">
+<img src="[https://img.shields.io/badge/quay.io-images-important.svg](https://img.shields.io/badge/quay.io-images-important.svg)?" alt="LocalAI Quay.io"/>
+</a>
+</p>
 
 \<p align="center"\>
 \<a href="[https://twitter.com/LocalAI\_API](https://twitter.com/LocalAI_API)" target="\_blank"\>
