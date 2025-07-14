@@ -1,33 +1,33 @@
 # LocalAI: Empowering Your AI Journey – Locally and Open Source 🚀
 
-\<p align="center"\>
-\<img width="300" src="[https://raw.githubusercontent.com/go-skynet/LocalAI/master/core/http/static/logo.png](https://www.google.com/search?q=https://raw.githubusercontent.com/go-skynet/LocalAI/master/core/http/static/logo.png)" alt="LocalAI Logo"\> \<br\>
-\<br\>
-\</p\>
+<p align="center"\>
+<img width="300" src="[https://raw.githubusercontent.com/go-skynet/LocalAI/master/core/http/static/logo.png](https://www.google.com/search?q=https://raw.githubusercontent.com/go-skynet/LocalAI/master/core/http/static/logo.png)" alt="LocalAI Logo"\> \<br\>
+<br>
+</p>
 
-\<p align="center"\>
-\<a href="[https://github.com/go-skynet/LocalAI/fork](https://github.com/go-skynet/LocalAI/fork)" target="\_blank"\>
-\<img src="[https://img.shields.io/github/forks/go-skynet/LocalAI?style=for-the-badge](https://img.shields.io/github/forks/go-skynet/LocalAI?style=for-the-badge)" alt="LocalAI forks"/\>
-\</a\>
-\<a href="[https://github.com/go-skynet/LocalAI/stargazers](https://github.com/go-skynet/LocalAI/stargazers)" target="\_blank"\>
-\<img src="[https://img.shields.io/github/stars/go-skynet/LocalAI?style=for-the-badge](https://img.shields.io/github/stars/go-skynet/LocalAI?style=for-the-badge)" alt="LocalAI stars"/\>
-\</a\>
-\<a href="[https://github.com/go-skynet/LocalAI/pulls](https://github.com/go-skynet/LocalAI/pulls)" target="\_blank"\>
-\<img src="[https://img.shields.io/github/issues-pr/go-skynet/LocalAI?style=for-the-badge](https://img.shields.io/github/issues-pr/go-skynet/LocalAI?style=for-the-badge)" alt="LocalAI pull-requests"/\>
-\</a\>
-\<a href='[https://github.com/go-skynet/LocalAI/releases](https://github.com/go-skynet/LocalAI/releases)'\>
-\<img src='[https://img.shields.io/github/release/go-skynet/LocalAI?\&label=Latest\&style=for-the-badge](https://img.shields.io/github/release/go-skynet/LocalAI?&label=Latest&style=for-the-badge)'\>
-\</a\>
-\</p\>
+<p align="center">
+<a href="[https://github.com/go-skynet/LocalAI/fork](https://github.com/go-skynet/LocalAI/fork)" target="\_blank"\>
+<img src="[https://img.shields.io/github/forks/go-skynet/LocalAI?style=for-the-badge](https://img.shields.io/github/forks/go-skynet/LocalAI?style=for-the-badge)" alt="LocalAI forks"/>
+</a>
+<a href="[https://github.com/go-skynet/LocalAI/stargazers](https://github.com/go-skynet/LocalAI/stargazers)" target="\_blank"\>
+<img src="[https://img.shields.io/github/stars/go-skynet/LocalAI?style=for-the-badge](https://img.shields.io/github/stars/go-skynet/LocalAI?style=for-the-badge)" alt="LocalAI stars"/>
+</a>
+<a href="[https://github.com/go-skynet/LocalAI/pulls](https://github.com/go-skynet/LocalAI/pulls)" target="\_blank">
+<img src="[https://img.shields.io/github/issues-pr/go-skynet/LocalAI?style=for-the-badge](https://img.shields.io/github/issues-pr/go-skynet/LocalAI?style=for-the-badge)" alt="LocalAI pull-requests"/>
+</a>
+<a href='[https://github.com/go-skynet/LocalAI/releases](https://github.com/go-skynet/LocalAI/releases)'>
+<img src='[https://img.shields.io/github/release/go-skynet/LocalAI?\&label=Latest\&style=for-the-badge](https://img.shields.io/github/release/go-skynet/LocalAI?&label=Latest&style=for-the-badge)'>
+</a>
+</p>
 
-\<p align="center"\>
-\<a href="[https://hub.docker.com/r/localai/localai](https://hub.docker.com/r/localai/localai)" target="\_blank"\>
-\<img src="[https://img.shields.io/badge/dockerhub-images-important.svg?logo=Docker](https://img.shields.io/badge/dockerhub-images-important.svg?logo=Docker)" alt="LocalAI Docker hub"/\>
-\</a\>
-\<a href="[https://quay.io/repository/go-skynet/local-ai?tab=tags\&tag=latest](https://quay.io/repository/go-skynet/local-ai?tab=tags&tag=latest)" target="\_blank"\>
-\<img src="[https://img.shields.io/badge/quay.io-images-important.svg](https://img.shields.io/badge/quay.io-images-important.svg)?" alt="LocalAI Quay.io"/\>
-\</a\>
-\</p\>
+<p align="center"\>
+<a href="[https://hub.docker.com/r/localai/localai](https://hub.docker.com/r/localai/localai)" target="\_blank"\>
+<img src="[https://img.shields.io/badge/dockerhub-images-important.svg?logo=Docker](https://img.shields.io/badge/dockerhub-images-important.svg?logo=Docker)" alt="LocalAI Docker hub"/\>
+</a\>
+<a href="[https://quay.io/repository/go-skynet/local-ai?tab=tags\&tag=latest](https://quay.io/repository/go-skynet/local-ai?tab=tags&tag=latest)" target="\_blank"\>
+<img src="[https://img.shields.io/badge/quay.io-images-important.svg](https://img.shields.io/badge/quay.io-images-important.svg)?" alt="LocalAI Quay.io"/\>
+</a\>
+</p\>
 
 \<p align="center"\>
 \<a href="[https://twitter.com/LocalAI\_API](https://twitter.com/LocalAI_API)" target="\_blank"\>
