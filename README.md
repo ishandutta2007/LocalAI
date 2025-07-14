@@ -1,7 +1,7 @@
 # LocalAI: Empowering Your AI Journey – Locally and Open Source 🚀
 
-<p align="center"\>
-<img width="300" src="[https://raw.githubusercontent.com/go-skynet/LocalAI/master/core/http/static/logo.png](https://www.google.com/search?q=https://raw.githubusercontent.com/go-skynet/LocalAI/master/core/http/static/logo.png)" alt="LocalAI Logo"\> \<br\>
+<p align="center">
+<img width="300" src="[https://raw.githubusercontent.com/go-skynet/LocalAI/master/core/http/static/logo.png](https://www.google.com/search?q=https://raw.githubusercontent.com/go-skynet/LocalAI/master/core/http/static/logo.png)" alt="LocalAI Logo"> \<br>
 <br>
 </p>
 
@@ -29,14 +29,14 @@
 </a>
 </p>
 
-\<p align="center"\>
-\<a href="[https://twitter.com/LocalAI\_API](https://twitter.com/LocalAI_API)" target="\_blank"\>
-\<img src="[https://img.shields.io/badge/X-%23000000.svg?style=for-the-badge\&logo=X\&logoColor=white\&label=LocalAI\_API](https://img.shields.io/badge/X-%23000000.svg?style=for-the-badge&logo=X&logoColor=white&label=LocalAI_API)" alt="Follow LocalAI\_API"/\>
-\</a\>
-\<a href="[https://discord.gg/uJAeKSAGDy](https://discord.gg/uJAeKSAGDy)" target="\_blank"\>
-\<img src="[https://dcbadge.vercel.app/api/server/uJAeKSAGDy?style=flat-square\&theme=default-inverted](https://dcbadge.vercel.app/api/server/uJAeKSAGDy?style=flat-square&theme=default-inverted)" alt="Join LocalAI Discord Community"/\>
-\</a\>
-\</p\>
+<p align="center">
+<a href="[https://twitter.com/LocalAI\_API](https://twitter.com/LocalAI_API)" target="\_blank">
+<img src="[https://img.shields.io/badge/X-%23000000.svg?style=for-the-badge\&logo=X\&logoColor=white\&label=LocalAI\_API](https://img.shields.io/badge/X-%23000000.svg?style=for-the-badge&logo=X&logoColor=white&label=LocalAI_API)" alt="Follow LocalAI\_API"/>
+</a>
+<a href="[https://discord.gg/uJAeKSAGDy](https://discord.gg/uJAeKSAGDy)" target="\_blank">
+<img src="[https://dcbadge.vercel.app/api/server/uJAeKSAGDy?style=flat-square\&theme=default-inverted](https://dcbadge.vercel.app/api/server/uJAeKSAGDy?style=flat-square&theme=default-inverted)" alt="Join LocalAI Discord Community"/>
+</a>
+</p>
 
 \<p align="center"\>
 \<a href="[https://trendshift.io/repositories/5539](https://trendshift.io/repositories/5539)" target="\_blank"\>\<img src="[https://trendshift.io/api/badge/repositories/5539](https://trendshift.io/api/badge/repositories/5539)" alt="mudler%2FLocalAI | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/\>\</a\>
