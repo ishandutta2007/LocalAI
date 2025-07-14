@@ -15,6 +15,14 @@
 
 **LocalAI** is a powerful drop-in replacement for OpenAI-compatible APIs, enabling developers to run large language models (LLMs), generate images, process audio, and build multimodal applications—all on consumer-grade hardware, without cloud dependency or GPU requirements. Developed and maintained by [Ettore Di Giacinto](https://github.com/mudler), LocalAI empowers developers with an extensible, modular architecture and a rapidly growing ecosystem.
 
+* 🧩 API-compatible with OpenAI, ElevenLabs, Anthropic and more
+* 🧠 Supports multiple LLMs including llama.cpp, GPT-J, Mixtral, Mistral, Phi-2, etc.
+* 🖼️ Built-in multimodal capabilities (audio, vision, text, and image)
+* 🔌 Easily deployable across CPUs, NVIDIA, AMD, Intel GPUs and Jetson boards
+* 🚫 No vendor lock-in, no cloud required, no telemetry
+
+---
+
 ## 📦 Key Features
 
 * 🌍 **Run Offline**: Execute LLMs, TTS, STT, and image generation locally—without any remote calls.
@@ -24,6 +32,7 @@
 * 🔧 **Agentic Capabilities**: Integrate with [LocalAGI](https://github.com/mudler/LocalAGI) and [LocalRecall](https://github.com/mudler/LocalRecall) for persistent memory and intelligent workflows.
 * 🧩 **Modular and Extendable**: Install new backends or features dynamically via OCI containers.
 * 🔒 **Privacy-First**: Keep data on-premises. No tracking. No data leaves your machine.
+* 🧪 **Fast CI/CD Release Cycle**: Continuous improvement, regular releases, and vibrant community.
 
 ---
 
