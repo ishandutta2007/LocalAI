@@ -6,10 +6,10 @@
 </p>
 
 <p align="center">
-<a href="[https://github.com/go-skynet/LocalAI/fork](https://github.com/go-skynet/LocalAI/fork)" target="\_blank"\>
+<a href="[https://github.com/go-skynet/LocalAI/fork](https://github.com/go-skynet/LocalAI/fork)" target="\_blank">
 <img src="[https://img.shields.io/github/forks/go-skynet/LocalAI?style=for-the-badge](https://img.shields.io/github/forks/go-skynet/LocalAI?style=for-the-badge)" alt="LocalAI forks"/>
 </a>
-<a href="[https://github.com/go-skynet/LocalAI/stargazers](https://github.com/go-skynet/LocalAI/stargazers)" target="\_blank"\>
+<a href="[https://github.com/go-skynet/LocalAI/stargazers](https://github.com/go-skynet/LocalAI/stargazers)" target="\_blank">
 <img src="[https://img.shields.io/github/stars/go-skynet/LocalAI?style=for-the-badge](https://img.shields.io/github/stars/go-skynet/LocalAI?style=for-the-badge)" alt="LocalAI stars"/>
 </a>
 <a href="[https://github.com/go-skynet/LocalAI/pulls](https://github.com/go-skynet/LocalAI/pulls)" target="\_blank">
@@ -38,9 +38,9 @@
 </a>
 </p>
 
-\<p align="center"\>
-\<a href="[https://trendshift.io/repositories/5539](https://trendshift.io/repositories/5539)" target="\_blank"\>\<img src="[https://trendshift.io/api/badge/repositories/5539](https://trendshift.io/api/badge/repositories/5539)" alt="mudler%2FLocalAI | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/\>\</a\>
-\</p\>
+<p align="center">
+<a href="[https://trendshift.io/repositories/5539](https://trendshift.io/repositories/5539)" target="\_blank"><img src="[https://trendshift.io/api/badge/repositories/5539](https://trendshift.io/api/badge/repositories/5539)" alt="mudler%2FLocalAI | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/>\</a>
+</p>
 
 > :bulb: **Get Assistance\!** Find answers in our [❓FAQ](https://localai.io/faq/), engage in [💭Discussions](https://github.com/go-skynet/LocalAI/discussions), connect on [:speech\_balloon: Discord](https://discord.gg/uJAeKSAGDy), or delve into our comprehensive [:book: Documentation website](https://localai.io/).
 >
