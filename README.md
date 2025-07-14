@@ -1,7 +1,7 @@
 # LocalAI: Empowering Your AI Journey – Locally and Open Source 🚀
 
 <p align="center">
-<img width="300" src="[https://raw.githubusercontent.com/go-skynet/LocalAI/master/core/http/static/logo.png](https://www.google.com/search?q=https://raw.githubusercontent.com/go-skynet/LocalAI/master/core/http/static/logo.png)" alt="LocalAI Logo"> \<br>
+<img width="300" src="[https://raw.githubusercontent.com/go-skynet/LocalAI/master/core/http/static/logo.png](https://www.google.com/search?q=https://raw.githubusercontent.com/go-skynet/LocalAI/master/core/http/static/logo.png)" alt="LocalAI Logo"> <br>
 <br>
 </p>
 
