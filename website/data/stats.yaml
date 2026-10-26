@@ -3,10 +3,10 @@
 # The four GitHub fields are rewritten by .github/ci/refresh-site-counters.sh,
 # which runs weekly from .github/workflows/refresh-site-counters.yml. Editing
 # them by hand works but will be overwritten on the next run.
-stars: 49639
-forks: 4507
-contributors: 257
-releases: 137
+stars: 49969
+forks: 4549
+contributors: 264
+releases: 139
 
 # The GitHub API cannot answer for this one, so it is maintained by hand and
 # the refresh script carries it through untouched.
